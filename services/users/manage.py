@@ -30,5 +30,13 @@ def test():
     sys.exit(result)
 
 
+@cli.command('seed_db')
+def seed_db():
+    """Seeds the database."""
+    db.session.add(User(username='michael', email="hermanmu@gmail.com"))
+    db.session.add(User(username='rektix', email="rektix@rektix.com"))
+    db.session.commit()
+
+
 if __name__ == '__main__':
     cli()
