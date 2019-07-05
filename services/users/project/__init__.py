@@ -2,11 +2,12 @@
 
 
 import os
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
 
-# instantiate db
+# instantiate the db
 db = SQLAlchemy()
 
 
