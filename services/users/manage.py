@@ -65,5 +65,6 @@ def cov():
         return 0
     sys.exit(result)
 
+
 if __name__ == '__main__':
     cli()
