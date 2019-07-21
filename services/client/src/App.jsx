@@ -83,6 +83,12 @@ class App extends Component {
       .catch((err) => { console.log(err); });
   };
 
+  componentWillMount() {
+    if (window.localStorage.getItem('authToken')) {
+      this.setState({ isAuthenticated: true });
+    };
+  };
+
   handleFormChange(event) {
     const obj = this.state.formData;
     obj[event.target.name] = event.target.value;
