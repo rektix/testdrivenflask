@@ -17,10 +17,15 @@ describe('Login', () => {
     });
     it('should display user info if a user is logged in', () => {
         // register user
-        registerUser(username, email);
+        cy
+            .visit('/register')
+            .get('input[name="username"]').type(username)
+            .get('input[name="email"]').type(email)
+            .get('input[name="password"]').type('test')
+            .get('input[type="submit"]').click()
+            .get('.navbar-burger').click();
 
         cy.wait(500);
-
         // assert '/status' is displayed correctly
         cy.visit('/status');
         cy.get('.navbar-burger').click();
