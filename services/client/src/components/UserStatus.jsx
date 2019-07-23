@@ -10,8 +10,8 @@ class UserStatus extends Component {
             email: '',
             id: '',
             username: '',
-            active: '',  // new
-            admin: ''    // new
+            active: '',
+            admin: ''
         };
     };
     componentDidMount() {
