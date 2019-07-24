@@ -31,6 +31,7 @@ client() {
 # run e2e tests
 e2e() {
   docker-compose -f docker-compose-prod.yml up -d --build
+  sleep 60
   docker-compose -f docker-compose-prod.yml exec users python manage.py recreate_db
   ./node_modules/.bin/cypress run --config baseUrl=http://localhost
   inspect $? e2e
